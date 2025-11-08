@@ -3,3 +3,8 @@
 @plugin "daisyui" {
   themes: light --default;
 }
+
+.main-container {
+  background-color: black;
+  min-height: 100vh;
+}
