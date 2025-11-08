@@ -1,8 +1,19 @@
-<section class="body-font">
-  <div class="h-100vh flex flex-col items-center justify-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Our Application</h1>
-    <p class="text-lg text-center max-w-2xl">Explore the features and functionalities we offer to enhance your
-      experience. Navigate through the app to discover more.</p>
+<section class="body-font text-white">
+  <div class="h-100vh flex flex-col items-center justify-center px-4">
+    <h1 class="text-5xl md:text-7xl tracking-tighter capitalize text-center font-normal flex flex-row items-center gap-2">
+      <span class="relative inline-block min-w-[400px] text-center md:pb-4 md:pt-1">
+        @for (title of titles; track $index) {
+          <span
+            class="absolute left-0 right-0 font-semibold text-primary title-animation"
+            [class.opacity-0]="titleNumber !== $index"
+            [class.opacity-100]="titleNumber === $index"
+            [style.transform]="titleNumber === $index ? 'translateY(0)' : (titleNumber > $index ? 'translateY(-150px)' : 'translateY(150px)')"
+          >
+            {{ title }}
+          </span>
+        }
+      </span>
+    </h1>
 
   </div>
 </section>
